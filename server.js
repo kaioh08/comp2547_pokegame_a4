@@ -53,13 +53,10 @@ function isAdmin(req, res, next) {
 
 // Mongo Atlas Connect
 mongoose
-  .connect(
-    "mongodb+srv://hchen256:comp1537@cluster0.74n5t.mongodb.net/timelineDB?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb+srv://kaioh:Kaioh0808@cluster0.vwaeg.mongodb.net/test?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then((res) => {
     console.log("MongoDB connected");
   });
