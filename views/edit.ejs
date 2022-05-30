@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Assignment4</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+      }
+    </style>
+    <script src="/scripts/edit.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="/banner.jpeg" height="40%" alt="banner" />
+    </header>
+
+    <nav>
+        <a href="/home" id="Homepage"> Home </a>
+        <a href="/search" id="Searchpage"> Search </a>
+        <a href="/timeline" id="Historypage"> Account </a>
+        <a href="/shoppingcart"> Cart </a>
+        <a href="/game"> Game </a>
+      </nav>
+
+    <main>
+      <div>
+          <label for="name">Name:</label>
+        <form action="/edit/<%=details.firstname %>/<%=details.email %>" method="POST">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value="<%=details.firstname %>"
+          />
+      </div>
+
+      <label for="email">Email:</label>
+        <input
+          type="text"
+          name="email"
+          id="email"
+          value="<%=details.email %>"
+        />
+        <br>
+        <input type="submit" name="submit" id="submit" value="Update">
+      </form>
+    </main>
+
+    <footer>
+      <h5>Copyright © Kai Oh 2022</h5>
+    </footer>
+  </body>
+</html>

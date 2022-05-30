@@ -143,7 +143,7 @@ let time =
 
 function insertSearchEventToTheTimeLine(poke_type) {
   $.ajax({
-    url: "http://localhost:8000/timeline/insert",
+    url: "http://localhost:5003/timeline/insert",
     type: "put",
     data: {
       text: ` Client has searched for ${poke_type}`,

@@ -1,6 +1,6 @@
-poke_id = null
-poke_name = null
-pokemons = []
+poke_id = null;
+poke_name = null;
+pokemons = [];
 
 const colors = {
     fire: "#FDDFDF",
@@ -20,21 +20,22 @@ const colors = {
 }
 
 async function display_all_picture() {
-    result = ''
-    for (i = 0; i < 3; i++) {
-        result += "<div class='images_group'>"
-        for (j = 0; j < 3; j++) {
-            poke_id = Math.floor((Math.random() * 600) + 1);
-            await $.ajax(
-                {
-                    "url": `https://pokeapi.co/api/v2/pokemon/${poke_id}`,
-                    "type": 'GET',
-                    "success": function process(data) {
-                        allowed = data.types[0].type.name
-                        obj_colors = Object.keys(colors).filter(key => allowed.includes(key))
-                        color_code = colors[obj_colors]
-                        poke_name = data.name
-                        result += `<div class="image_container" style="background:linear-gradient(45deg, ${color_code[0]}, ${color_code[1]});"> <a href='profile/${poke_id}' id= ${poke_id}>
+  result = "";
+  for (i = 0; i < 3; i++) {
+    result += "<div class='images_group'>";
+    for (j = 0; j < 3; j++) {
+      poke_id = Math.floor(Math.random() * 600 + 1);
+      await $.ajax({
+        url: `https://pokeapi.co/api/v2/pokemon/${poke_id}`,
+        type: "GET",
+        success: function process(data) {
+          allowed = data.types[0].type.name;
+          obj_colors = Object.keys(colors).filter((key) =>
+            allowed.includes(key)
+          );
+          color_code = colors[obj_colors];
+          poke_name = data.name;
+          result += `<div class="image_container" style="background:linear-gradient(45deg, ${color_code[0]}, ${color_code[1]});"> <a href='profile/${poke_id}' id= ${poke_id}>
                         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${poke_id}.png">
                         </img>
                         </a>
@@ -44,15 +45,14 @@ async function display_all_picture() {
                         </div>
                         </div>
                         <div>${poke_name}</div>
-                        </div>`
-                    }
-                }
-            )
-        }
-
-        result += "</div>"
+                        </div>`;
+        },
+      });
     }
-    $("main").html(result)
+
+    result += "</div>";
+  }
+  $("main").html(result);
 }
 
 const d = new Date();
@@ -74,13 +74,18 @@ function insertSearchEventToTheTimeLine(poke_ID) {
     })
 }
 
-
 $(document).ready(function () {
-    display_all_picture()
+  display_all_picture();
 
-    $('body').on("click", 'a', function () {
-        var poke_ID = $(this).attr("id");
-        // console.log(poke_ID)
-        insertSearchEventToTheTimeLine(poke_ID)
-    })
-})
+  $("body").on("click", "a", async function () {
+    var poke_ID = $(this).attr("id");
+    await $.ajax({
+      url: `https://pokeapi.co/api/v2/pokemon/${poke_ID}`,
+      type: "get",
+      success: function (data) {
+        console.log(data.species.name)
+        insertSearchEventToTheTimeLine(data.species.name);
+      },
+    });
+  });
+});
