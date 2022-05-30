@@ -6,4 +6,4 @@ heroku link: https://nameless-sea-59811.herokuapp.com/
 
 github link: https://github.com/kaioh08/comp2547_pokegame_a4
 
-youtube link: TBA
+youtube link: https://youtu.be/EQQvKNBRb7s
