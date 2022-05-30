@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Game</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/game.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script src="scripts/game.js"></script>
+    <style>
+      main {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: auto auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="./banner.jpeg" height="40%" alt="banner" />
+    </header>
+
+    <nav>
+      <a href="/home" id="Homepage"> Home </a>
+      <a href="/search" id="Searchpage"> Search </a>
+      <a href="/timeline" id="Historypage"> Account </a>
+      <a href="/shoppingcart"> Cart </a>
+      <a href="/game"> Game </a>
+    </nav>
+    <main>
+      <div>
+        <label for="level">Choose Grid Size</label>
+        <select id="level">
+          <option value="6">2x3</option>
+          <option value="12">3x4</option>
+        </select>
+      </div>
+
+      <br />
+
+      <div id="game_grid12">
+        <div class="card">
+          <img id="img1" class="front_face" src="1.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img2" class="front_face" src="2.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img3" class="front_face" src="3.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img4" class="front_face" src="3.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img5" class="front_face" src="1.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img6" class="front_face" src="2.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img7" class="front_face" src="4.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img8" class="front_face" src="5.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img12" class="front_face" src="6.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img9" class="front_face" src="4.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img10" class="front_face" src="5.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img11" class="front_face" src="6.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+      </div>
+
+      <div id="game_grid6">
+        <div class="card">
+          <img id="img13" class="front_face" src="1.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img14" class="front_face" src="2.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img15" class="front_face" src="3.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img16" class="front_face" src="3.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img17" class="front_face" src="1.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+
+        <div class="card">
+          <img id="img18" class="front_face" src="2.png" alt="" />
+          <img class="back_face" src="back.png" alt="" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <h5>Copyright © Kai Oh 2022</h5>
+    </footer>
+  </body>
+</html>
